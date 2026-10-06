@@ -1,8 +1,12 @@
 export const profile = {
   name: "MEY Soytry",
-  role: "Frontend Developer",
-  tagline: "Frontend Developer & Data Analyst",
-  bio: "Hi, I'm Soytry — I build user-friendly web applications with modern technologies. Experienced as a Frontend Team Lead, I enjoy leveraging AI and new tools to create fast, elegant, and effective digital solutions.",
+  role: "Data Warehouse Administration Officer",
+  tagline: "Data Warehouse Administration Officer",
+  eyebrow: "Open to data warehouse roles · Phnom Penh, Cambodia",
+  bio: "Junior Core Banking at ChokChey Finance Plc. I work with core banking systems, manage reports, and build data pipelines for reporting. I also build warehouse pipelines in SQL, PostgreSQL, Snowflake, dbt, Airflow, and Power BI.",
+  aboutHeading: "Banking data, reports, and warehouses.",
+  aboutBody:
+    "I work on core banking data at ChokChey Finance Plc. I check Credit Bureau files, reconcile source and database counts in SQL, and trace mismatches before handoff. On my own projects I land the files, load the warehouse, model a star schema, schedule the pipeline, and check the report against the database.",
   email: "meysoytry@gmail.com",
   phone: "+855 86 329 085",
   location: "Phnom Penh, Cambodia",
@@ -11,69 +15,137 @@ export const profile = {
 
 export const techStack = [
   {
-    category: "Frontend",
+    category: "Warehouse",
     skills: [
-      "Next.js",
-      "React.js",
-      "TypeScript",
-      "JavaScript",
-      "TanStack Query",
-      "TailwindCSS",
-      "Bootstrap",
-      "Shadcn/UI",
-      "NextUI",
-      "Framer Motion",
-      "GSAP",
+      "PostgreSQL",
+      "Snowflake",
+      "Medallion Architecture",
+      "Star Schema",
+      "Dimensional Modeling",
+      "dbt",
     ],
   },
   {
-    category: "Backend",
-    skills: ["Java", "Spring Boot", "FastAPI", "SQL", "PostgreSQL"],
+    category: "Pipelines",
+    skills: [
+      "ETL/ELT",
+      "Airflow",
+      "Cloud Computing",
+      "Docker",
+      "SQL Validation",
+      "Data-Quality Checks",
+    ],
   },
   {
-    category: "Data Analyst",
+    category: "Analytics",
     skills: [
+      "SQL",
+      "Power BI",
+      "Power Query",
+      "Excel",
       "Python",
       "Pandas",
       "NumPy",
-      "Data Processing",
-      "Data Warehouse",
-      "ETL/ELT",
-      "Power BI",
-      "Power Query",
-      "Advanced Excel",
     ],
   },
-  { category: "Tools", skills: ["Docker", "Git"] },
+  {
+    category: "Also used",
+    skills: ["Git", "FastAPI", "Next.js", "Spring Boot"],
+  },
 ];
 
-export const techTags = [
-  "Frontend Developer",
-  "Backend Developer",
-  "Data Analyst",
-  "Data Warehouse",
-];
+export const techTags = ["Data Warehouse", "ETL/ELT", "SQL", "PostgreSQL"];
 
 export const projects = [
+  {
+    id: "olist",
+    name: "Olist e-commerce ELT platform",
+    emoji: "📦",
+    subtitle: "Cloud → Snowflake Bronze → dbt → Airflow → Power BI",
+    description:
+      "Landed Olist CSVs on cloud storage and loaded Snowflake Bronze with COPY INTO: about 99,400 orders, 112,600 order items, and 1,000,000 geolocation rows. Built silver views, a gold star schema in dbt, a reporting mart, an Airflow DAG, a fact-table grain test, and a Power BI report reconciled to Snowflake.",
+    stack: [
+      "Cloud Computing",
+      "Snowflake",
+      "dbt",
+      "Airflow",
+      "Power BI",
+      "SQL",
+    ],
+    role: "Land → Bronze → Silver → Gold star schema → reporting mart",
+    highlight: true,
+    images: [
+      { src: "/projects/Olist/pipeline.png", label: "Airflow DAG" },
+      { src: "/projects/Olist/bronze_layer.png", label: "Bronze" },
+      { src: "/projects/Olist/staging_layer.png", label: "Silver" },
+      { src: "/projects/Olist/star_schema.png", label: "Star Schema" },
+      { src: "/projects/Olist/gold_layer.png", label: "Mart" },
+      { src: "/projects/Olist/report.png", label: "Power BI" },
+    ],
+    details: {
+      overview:
+        "Landed Olist CSVs on cloud storage and loaded Snowflake Bronze with COPY INTO: about 99,400 orders, 112,600 order items, and 1,000,000 geolocation rows. Built silver views, a gold star schema in dbt, a reporting mart, an Airflow DAG, a fact-table grain test, and a Power BI report reconciled to Snowflake.",
+      highlights: [
+        "Cloud landing zone feeding Snowflake Bronze via COPY INTO",
+        "dbt silver views and gold star schema with a reporting mart",
+        "Airflow DAG orchestration and fact-table grain test",
+        "Power BI report reconciled to Snowflake",
+      ],
+      github:
+        "https://github.com/Soytry17/olist_brazilian_e-commerce_analytics_platform",
+      demo: null as string | null,
+    },
+  },
+  {
+    id: "psql-warehouse",
+    name: "ERP and CRM PostgreSQL warehouse",
+    emoji: "🗄️",
+    subtitle: "Medallion · Bronze → Silver → Gold star schema",
+    description:
+      "Medallion warehouse in PostgreSQL. Bronze loads from ERP and CRM CSVs, silver cleansing, gold star schema, SQL ETL, data-quality checks, a data catalog, and naming standards.",
+    stack: ["PostgreSQL", "ETL", "Star Schema", "Data Quality"],
+    role: "Bronze loads → silver cleansing → gold star schema",
+    highlight: true,
+    images: [
+      {
+        src: "/projects/PsqlWarehouse/data_structure_flow.png",
+        label: "Medallion Flow",
+      },
+      { src: "/projects/PsqlWarehouse/data_model.png", label: "Star Schema" },
+      {
+        src: "/projects/PsqlWarehouse/data_integration.png",
+        label: "Data Integration",
+      },
+    ],
+    details: {
+      overview:
+        "Medallion warehouse in PostgreSQL. Bronze loads from ERP and CRM CSVs, silver cleansing, gold star schema, SQL ETL, data-quality checks, a data catalog, and naming standards.",
+      highlights: [
+        "Bronze loads from ERP and CRM CSVs",
+        "Silver cleansing and gold star schema",
+        "SQL ETL with data-quality checks",
+        "Data catalog and naming standards",
+      ],
+      github: "https://github.com/Soytry17/psql_data_warehouse",
+      demo: null as string | null,
+    },
+  },
   {
     id: "sqlyst",
     name: "SQLyst",
     emoji: "🤖",
-    subtitle: "AI Chatbot · Advanced Course Project",
+    subtitle: "PostgreSQL → FastAPI → LLM Chat → Prophet → Dashboard",
     description:
-      "A centralized AI-powered data analysis platform that enables non-technical users to interact with company data using natural language queries.",
+      "PostgreSQL-backed app so a non-technical user can query data in plain language. FastAPI, chatbot layer, Prophet forecasts. KSHRD Advanced Course, Jul–Dec 2025.",
     stack: [
       "Next.js",
       "TypeScript",
-      "Tailwind",
-      "Shadcn",
-      "Motion",
       "FastAPI",
       "LLMs",
-      "Prophet Model",
+      "Prophet",
       "PostgreSQL",
     ],
-    role: "Design UX/UI · Implement Frontend & Backend · Train Prophet Model for Time Series Forecasting",
+    role: "Natural language → SQL → charts → time-series forecasts",
     highlight: false,
     images: [
       { src: "/projects/SQLyst/dashboard.png", label: "Dashboard" },
@@ -83,37 +155,25 @@ export const projects = [
     ],
     details: {
       overview:
-        "SQLyst is a centralized AI-powered analytics platform that lets non-technical users query company databases using plain English. It translates natural language into SQL, runs the query, and presents the results as interactive charts and summaries — no SQL knowledge required.",
+        "PostgreSQL-backed app so a non-technical user can query data in plain language. FastAPI, chatbot layer, Prophet forecasts. Built during the KSHRD Advanced Course, Jul–Dec 2025.",
       highlights: [
-        "Natural language → SQL pipeline powered by LLMs for zero-code data querying",
-        "Prophet model integration for time series forecasting and trend analysis",
-        "Interactive dashboard with real-time charts, filters, and exportable reports",
-        "Multi-user access with role-based permissions for data security",
-        "FastAPI backend with async query execution for fast response times",
+        "Natural language queries against PostgreSQL",
+        "FastAPI backend with chatbot layer",
+        "Prophet model for time-series forecasts",
       ],
-      github: null,
-      demo: null,
+      github: null as string | null,
+      demo: null as string | null,
     },
   },
   {
     id: "rippleeco",
     name: "RippleEco",
     emoji: "🌿",
-    subtitle: "Environmental Platform · Basic Course Project",
+    subtitle: "Next.js → Spring Boot → PostgreSQL",
     description:
-      "Environmental platform that empowers individuals to participate in eco-friendly events, make donations, and raise awareness about environmental issues to government.",
-    stack: [
-      "Next.js",
-      "JavaScript",
-      "Tailwind",
-      "Shadcn",
-      "Spring Boot",
-      "PostgreSQL",
-      "Selenium",
-      "Telegram Bot",
-      "OneSignal",
-    ],
-    role: "Design UX/UI · Frontend Team Lead · Design Frontend Architecture · Testing · Implement Backend",
+      "Environmental platform that empowers individuals to take action, participate in eco-friendly events, donate to important causes, and raise awareness about environmental issues.",
+    stack: ["Next.js", "Spring Boot", "PostgreSQL"],
+    role: "Frontend Team Lead",
     highlight: false,
     images: [
       { src: "/projects/RippleEco/landing.png", label: "Landing" },
@@ -123,16 +183,15 @@ export const projects = [
     ],
     details: {
       overview:
-        "RippleEco is a community-driven environmental platform built to bridge individuals, organizations, and government bodies. Users can join local eco-events, donate to environmental causes, and submit awareness reports directly to authorities — all in one place.",
+        "Environmental platform that empowers individuals to take action, participate in eco-friendly events, donate to important causes, and raise awareness about environmental issues. Built with Next.js, Spring Boot, and PostgreSQL at Korean Software HRD Center.",
       highlights: [
-        "Eco-event discovery and registration with geolocation-based filtering",
-        "Donation system with campaign tracking and progress visualization",
-        "Government petition feature to report environmental issues with evidence",
-        "Automated environmental data scraping via Selenium for real-time updates",
-        "Push notifications through Telegram Bot and OneSignal for event reminders",
+        "Eco-event discovery and registration",
+        "Donation campaigns for environmental causes",
+        "Awareness reporting to raise issues with authorities",
+        "Frontend team lead on architecture and delivery",
       ],
-      github: null,
-      demo: null,
+      github: null as string | null,
+      demo: null as string | null,
     },
   },
 ];
@@ -142,59 +201,49 @@ export const education = [
     degree: "Bachelor of Information Technology",
     institution: "University of Cambodia",
     period: "2023 – Present",
-    detail: "3rd Year Student",
+    detail: "Year 4",
   },
   {
     degree: "Advanced Course — Data Analytics",
     institution: "Korean Software HRD Center",
     period: "Jul – Dec 2025",
     detail:
-      "Data Engineering, ETL/ELT, Web Scraping, Python, Advanced Statistics, Power BI, Time Series Forecasting",
+      "Statistics, data collection and web scraping, ETL/ELT, Power BI, Python, time-series forecasting",
   },
   {
     degree: "Basic Course — Software Development",
     institution: "Korean Software HRD Center",
     period: "Feb – Jul 2025",
-    detail:
-      "Java, Spring Boot, Next.js, React, PostgreSQL, Docker, GitHub, UI/UX",
-  },
-  {
-    degree: "High School Diploma",
-    institution: "Hun Sen Treuy Sla High School",
-    period: "2021 – 2023",
-    detail: "Grade: B",
+    detail: "Java, Spring Boot, SQL, PostgreSQL, data modeling, Docker, Git",
   },
 ];
 
 export const experience = [
   {
+    title: "Junior Core Banking",
+    company: "ChokChey Finance Plc · Phnom Penh",
+    period: "Feb 2026–Present",
+    description: "",
+    bullets: [
+      "Work with core banking systems and manage databases.",
+      "Manage reports and build data pipelines for reporting.",
+      "Validate and reconcile record counts with SQL, then document mismatches and fixes.",
+    ],
+  },
+  {
     title: "Frontend Team Lead",
     company: "Korean Software HRD Center",
     period: "2025",
     description:
-      "Led the frontend team on RippleEco — an environmental platform built with Next.js. Designed the frontend architecture, managed team workflow, and implemented key UI features.",
+      "Led the frontend team on a Next.js, Spring Boot, and PostgreSQL platform. Set the architecture, split the work, and delivered the interface.",
+    bullets: [] as string[],
   },
-  {
-    title: "Internship Photographer",
-    company: "University of Cambodia",
-    period: "Jun 2023 – Jan 2024",
-    description:
-      "Assisted in photoshoots and video production, handling camera setup and composition. Edited photos and videos using Adobe Photoshop, Lightroom, and CapCut.",
-  },
-];
-
-export const softSkills = [
-  "Teamwork",
-  "Responsibility",
-  "Commitment",
-  "Quick Learning",
-  "Self Development",
 ];
 
 export const languages = [
-  { name: "Khmer", flag: "🇰🇭", level: "Mother tongue" },
+  { name: "Khmer", flag: "🇰🇭", level: "Native" },
   { name: "English", flag: "🇺🇸", level: "Intermediate" },
-  { name: "Korean", flag: "🇰🇷", level: "TOPIK I Level 1" },
+  { name: "Korean", flag: "🇰🇷", level: "Basic" },
 ];
 
 // Sign up free at formspree.io → New Form → copy your form ID here
@@ -217,20 +266,6 @@ export const testimonials = [
   },
 ];
 
-export const skillProficiency = [
-  { name: "Next.js / React.js", level: 90, category: "Frontend" },
-  { name: "TypeScript / JavaScript", level: 88, category: "Frontend" },
-  { name: "TailwindCSS / Bootstrap", level: 92, category: "Frontend" },
-  { name: "Framer Motion / GSAP", level: 78, category: "Frontend" },
-  { name: "Spring Boot", level: 72, category: "Backend" },
-  { name: "FastAPI", level: 70, category: "Backend" },
-  { name: "SQL / PostgreSQL", level: 80, category: "Backend" },
-  { name: "Python / Pandas / NumPy", level: 82, category: "Data Analyst" },
-  { name: "Power BI / Power Query", level: 80, category: "Data Analyst" },
-  { name: "ETL/ELT / Data Warehouse", level: 74, category: "Data Analyst" },
-  { name: "Advanced Excel", level: 85, category: "Data Analyst" },
-];
-
 export const navLinks = [
   { href: "#about", label: "About" },
   { href: "#education", label: "Education" },
@@ -240,7 +275,7 @@ export const navLinks = [
 ];
 
 export const social = [
-  { label: "GitHub", href: "https://github.com/Try43-loki" },
+  { label: "GitHub", href: "https://github.com/Soytry17" },
   {
     label: "LinkedIn",
     href: "https://www.linkedin.com/in/soytry-mey-3a156b332",

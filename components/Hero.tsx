@@ -14,23 +14,23 @@ export default function Hero() {
         {/* Eyebrow */}
         <div className="flex items-center gap-3 font-mono text-[11px] tracking-[0.15em] uppercase text-[#c8a96e]">
           <span className="block w-8 h-px bg-[#c8a96e]" />
-          {profile.available ? "Open to opportunities · Phnom Penh, Cambodia" : "Phnom Penh, Cambodia"}
+          {profile.eyebrow}
         </div>
 
         {/* Title */}
         <h1
           className="font-serif font-bold text-[#f0ede6] leading-none tracking-tight"
-          style={{ fontSize: "clamp(46px, 6.5vw, 82px)", letterSpacing: "-2px" }}
+          style={{ fontSize: "clamp(40px, 5.5vw, 68px)", letterSpacing: "-2px" }}
         >
-          Frontend
+          Data Warehouse
           <br />
-          <em className="italic text-[#c8a96e]">Developer</em>
+          <em className="italic text-[#c8a96e]">Administration</em>
           <br />
-          &amp; Data Analyst
+          Officer
         </h1>
 
         {/* Bio */}
-        <p className="text-[15px] leading-[1.75] text-[#7a7870] font-light max-w-lg">
+        <p className="text-[16px] leading-[1.75] text-[#b0aea6] font-normal max-w-lg">
           {profile.bio}
         </p>
 
@@ -39,7 +39,7 @@ export default function Hero() {
           {techTags.map((tag) => (
             <span
               key={tag}
-              className="font-mono text-[10px] tracking-[0.1em] uppercase text-[#7a7870] border border-white/[0.07] px-3 py-1.5 rounded-sm hover:border-[#c8a96e] hover:text-[#c8a96e] transition-all duration-200 cursor-default"
+              className="font-mono text-[11px] tracking-[0.1em] uppercase text-[#b0aea6] border border-white/[0.07] px-3 py-1.5 rounded-sm hover:border-[#c8a96e] hover:text-[#c8a96e] transition-all duration-200 cursor-default"
             >
               {tag}
             </span>
@@ -52,7 +52,7 @@ export default function Hero() {
             href="#projects"
             className="inline-flex items-center gap-2.5 bg-[#c8a96e] text-[#0a0a08] font-mono text-[11px] tracking-[0.1em] uppercase px-7 py-3.5 rounded-sm hover:bg-[#e8d5b0] transition-colors duration-200 no-underline"
           >
-            View Projects
+            View warehouse projects
             <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-3.5 h-3.5">
               <path d="M3 8h10M9 4l4 4-4 4" />
             </svg>
@@ -68,10 +68,10 @@ export default function Hero() {
             </svg>
           </a>
           <a
-            href={`mailto:${profile.email}`}
+            href="#contact"
             className="font-mono text-[11px] tracking-[0.1em] uppercase text-[#7a7870] hover:text-[#f0ede6] border-b border-transparent hover:border-white/30 pb-0.5 transition-all duration-200 no-underline"
           >
-            Get in touch →
+            Contact →
           </a>
         </div>
       </div>

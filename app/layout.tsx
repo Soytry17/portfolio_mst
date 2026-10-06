@@ -24,17 +24,18 @@ const dmSans = DM_Sans({
 export const metadata: Metadata = {
   title: "MEY Soytry - Portfolio",
   description:
-    "Portfolio of MEY Soytry — Frontend Developer & Data Analyst from Phnom Penh, Cambodia. Building fast, elegant web apps with Next.js, React, TypeScript, and modern tooling.",
+    "Portfolio of MEY Soytry — Data Warehouse Administration Officer from Phnom Penh, Cambodia. Warehouse pipelines in SQL, PostgreSQL, Snowflake, dbt, Airflow, and Power BI.",
   keywords: [
-    "MEY Soytry", "Mey Soytry", "Frontend Developer", "Data Analyst",
-    "Next.js", "React", "TypeScript", "Cambodia", "Phnom Penh",
+    "MEY Soytry", "Mey Soytry", "Data Warehouse Administration Officer",
+    "Data Warehouse", "ETL", "SQL", "PostgreSQL", "Snowflake", "dbt",
+    "Cambodia", "Phnom Penh",
   ],
   authors: [{ name: "MEY Soytry" }],
   metadataBase: new URL("https://portfolio-mst-six.vercel.app"),
   openGraph: {
     title: "MEY Soytry - Portfolio",
     description:
-      "Portfolio of MEY Soytry — Frontend Developer & Data Analyst from Phnom Penh, Cambodia.",
+      "Portfolio of MEY Soytry — Data Warehouse Administration Officer from Phnom Penh, Cambodia.",
     type: "website",
     url: "https://portfolio-mst-six.vercel.app",
     siteName: "MEY Soytry Portfolio",
@@ -43,7 +44,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "MEY Soytry - Portfolio",
     description:
-      "Portfolio of MEY Soytry — Frontend Developer & Data Analyst from Phnom Penh, Cambodia.",
+      "Portfolio of MEY Soytry — Data Warehouse Administration Officer from Phnom Penh, Cambodia.",
   },
 };
 

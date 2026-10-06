@@ -49,8 +49,14 @@ export default function ProjectModal({ project, onClose }: Props) {
     setTimeout(onClose, 280);
   };
 
-  const prev = () => setActiveImg((i) => (i - 1 + project.images.length) % project.images.length);
-  const next = () => setActiveImg((i) => (i + 1) % project.images.length);
+  const prev = () => {
+    if (!project.images.length) return;
+    setActiveImg((i) => (i - 1 + project.images.length) % project.images.length);
+  };
+  const next = () => {
+    if (!project.images.length) return;
+    setActiveImg((i) => (i + 1) % project.images.length);
+  };
 
   if (!mounted) return null;
 
@@ -88,9 +94,10 @@ export default function ProjectModal({ project, onClose }: Props) {
         </button>
 
         {/* Body */}
-        <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_1fr]">
+        <div className={`grid grid-cols-1 ${project.images.length > 0 ? "lg:grid-cols-[1.2fr_1fr]" : ""}`}>
 
           {/* ── Carousel side ── */}
+          {project.images.length > 0 && (
           <div className="flex flex-col border-b lg:border-b-0 lg:border-r border-white/[0.07]">
             {/* Main image */}
             <div className="relative aspect-video bg-[#0d0d0b] overflow-hidden group/img">
@@ -169,6 +176,7 @@ export default function ProjectModal({ project, onClose }: Props) {
               </div>
             </div>
           </div>
+          )}
 
           {/* ── Content side ── */}
           <div className="p-7 flex flex-col gap-5 overflow-y-auto">
@@ -230,10 +238,10 @@ export default function ProjectModal({ project, onClose }: Props) {
 
             {/* Role */}
             <div className="flex items-start gap-2.5 pt-4 border-t border-white/[0.07]">
-              <span className="font-mono text-[9px] tracking-[0.18em] uppercase text-[#7a7870]/50 shrink-0 pt-0.5">
+              <span className="font-mono text-[10px] tracking-[0.18em] uppercase text-[#b0aea6]/60 shrink-0 pt-0.5">
                 Role
               </span>
-              <span className="font-mono text-[10px] tracking-[0.06em] text-[#7a7870] leading-relaxed">
+              <span className="font-mono text-[12px] tracking-[0.04em] text-[#b0aea6] leading-relaxed">
                 {project.role}
               </span>
             </div>

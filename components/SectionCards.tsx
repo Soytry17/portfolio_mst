@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { projects, techStack } from "@/lib/data";
+import { projects } from "@/lib/data";
 
 export default function SectionCards() {
   return (
@@ -18,7 +18,7 @@ export default function SectionCards() {
       >
         {/* About Me */}
         <Card href="#about" icon={<UserIcon />} title="About Me">
-          Passionate frontend dev who loves building user-friendly apps and leveraging AI to stay ahead of the curve.
+          Junior Core Banking at ChokChey Finance Plc — managing reports, building data pipelines for reporting, and warehouse projects.
         </Card>
 
         {/* Education */}
@@ -28,7 +28,7 @@ export default function SectionCards() {
 
         {/* Experience */}
         <Card href="#experience" icon={<BriefIcon />} title="Experience">
-          Frontend Team Lead at KSHRD · Internship Photographer at University of Cambodia (2023–2024).
+          Junior Core Banking at ChokChey Finance Plc · Frontend Team Lead at KSHRD (2025).
         </Card>
 
         {/* Tech Stack */}
@@ -61,14 +61,14 @@ function Card({
   children: React.ReactNode; external?: boolean;
 }) {
   const inner = (
-    <div className="card-item bg-[#111110] p-7 flex flex-col gap-3.5 cursor-pointer hover:bg-[#1a1a18] transition-colors duration-200 min-h-[155px] h-full group">
+    <div className="card-item bg-[#111110] p-7 flex flex-col gap-4 cursor-pointer hover:bg-[#1a1a18] transition-colors duration-200 min-h-[180px] h-full group">
       <div className="w-9 h-9 border border-white/[0.07] rounded-sm flex items-center justify-center text-[#c8a96e] group-hover:border-[#c8a96e] group-hover:bg-[#c8a96e]/[0.08] transition-all duration-200">
         {icon}
       </div>
-      <div className="font-serif text-[18px] font-bold text-[#f0ede6] leading-tight">
+      <div className="font-serif text-[20px] font-bold text-[#f0ede6] leading-tight">
         {title}
       </div>
-      <div className="text-[12px] leading-relaxed text-[#7a7870] font-light flex-1">
+      <div className="text-[14px] leading-[1.7] text-[#b0aea6] font-normal flex-1">
         {children}
       </div>
       <span className="self-end text-white/20 group-hover:text-[#c8a96e] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-200">
@@ -83,18 +83,18 @@ function Card({
 
 /* ---------- tech stack card ---------- */
 function CardTech() {
-  const badges = ["Next.js", "React", "TypeScript", "Tailwind", "GSAP", "Spring Boot", "PostgreSQL", "Docker"];
+  const badges = ["PostgreSQL", "Snowflake", "dbt", "Airflow", "SQL", "Power BI", "Cloud Computing", "Docker"];
   return (
-    <div className="card-item bg-[#111110] p-7 flex flex-col gap-3.5 cursor-pointer hover:bg-[#1a1a18] transition-colors duration-200 min-h-[155px] group">
+    <div className="card-item bg-[#111110] p-7 flex flex-col gap-4 cursor-pointer hover:bg-[#1a1a18] transition-colors duration-200 min-h-[180px] group">
       <div className="w-9 h-9 border border-white/[0.07] rounded-sm flex items-center justify-center text-[#c8a96e] group-hover:border-[#c8a96e] group-hover:bg-[#c8a96e]/[0.08] transition-all duration-200">
         <CodeIcon />
       </div>
-      <div className="font-serif text-[18px] font-bold text-[#f0ede6] leading-tight">Tech Stack</div>
-      <div className="flex flex-wrap gap-1.5 mt-1">
+      <div className="font-serif text-[20px] font-bold text-[#f0ede6] leading-tight">Tech Stack</div>
+      <div className="flex flex-wrap gap-2 mt-1">
         {badges.map((b) => (
           <span
             key={b}
-            className="font-mono text-[9px] tracking-[0.08em] uppercase text-[#c8a96e] bg-[#c8a96e]/[0.08] border border-[#c8a96e]/20 px-2 py-1 rounded-sm"
+            className="font-mono text-[11px] tracking-[0.06em] uppercase text-[#c8a96e] bg-[#c8a96e]/[0.08] border border-[#c8a96e]/20 px-2.5 py-1.5 rounded-sm"
           >
             {b}
           </span>
@@ -114,21 +114,21 @@ function CardProjects() {
       href="#projects"
       className="no-underline col-span-2"
     >
-      <div className="card-item bg-[#111110] p-7 flex flex-col gap-3.5 cursor-pointer hover:bg-[#1a1a18] transition-colors duration-200 min-h-[155px] h-full group">
+      <div className="card-item bg-[#111110] p-7 flex flex-col gap-4 cursor-pointer hover:bg-[#1a1a18] transition-colors duration-200 min-h-[180px] h-full group">
         <div className="w-9 h-9 border border-white/[0.07] rounded-sm flex items-center justify-center text-[#c8a96e] group-hover:border-[#c8a96e] group-hover:bg-[#c8a96e]/[0.08] transition-all duration-200">
           <MonitorIcon />
         </div>
-        <div className="font-serif text-[18px] font-bold text-[#f0ede6] leading-tight">Projects</div>
+        <div className="font-serif text-[20px] font-bold text-[#f0ede6] leading-tight">Projects</div>
         <div className="flex gap-4 mt-1">
-          {projects.map((p) => (
+          {projects.slice(0, 2).map((p) => (
             <div
               key={p.id}
-              className="flex-1 bg-white/[0.03] border border-white/[0.07] rounded-sm p-3"
+              className="flex-1 bg-white/[0.03] border border-white/[0.07] rounded-sm p-4"
             >
-              <div className="text-[12px] font-medium text-[#f0ede6] mb-1">
-                {p.emoji} {p.name}
+              <div className="text-[14px] font-medium text-[#f0ede6] mb-1.5 leading-snug">
+                {p.name}
               </div>
-              <div className="text-[11px] text-[#7a7870] leading-relaxed">
+              <div className="text-[13px] text-[#b0aea6] leading-[1.65]">
                 {p.description.slice(0, 90)}…
               </div>
             </div>

@@ -64,7 +64,7 @@ export default function ProfileCard() {
           {profile.name}
         </h2>
         <p className="font-mono text-[10px] tracking-[0.12em] uppercase text-[#c8a96e] mb-4">
-          {profile.role} · IT Student
+          {profile.role}
         </p>
 
         <div className="flex flex-col gap-2 mb-4">

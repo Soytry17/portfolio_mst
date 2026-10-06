@@ -21,16 +21,16 @@ export default function Education() {
               <h3 className="font-serif text-[20px] font-bold text-[#f0ede6] leading-snug">
                 {edu.degree}
               </h3>
-              <span className="font-mono text-[10px] tracking-widest uppercase text-[#c8a96e] shrink-0 mt-0.5">
+              <span className="font-mono text-[12px] tracking-widest uppercase text-[#c8a96e] shrink-0 mt-0.5">
                 {edu.period}
               </span>
             </div>
 
-            <p className="font-mono text-[10px] tracking-[0.12em] uppercase text-[#7a7870] mb-3">
+            <p className="font-mono text-[12px] tracking-[0.1em] uppercase text-[#b0aea6] mb-3">
               {edu.institution}
             </p>
 
-            <p className="text-[13px] leading-relaxed text-[#7a7870]/80 font-light">
+            <p className="text-[15px] leading-[1.7] text-[#b0aea6] font-normal">
               {edu.detail}
             </p>
           </div>

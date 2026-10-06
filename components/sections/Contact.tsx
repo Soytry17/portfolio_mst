@@ -24,10 +24,9 @@ export default function Contact() {
             <em className="italic text-[#c8a96e]">together.</em>
           </h2>
 
-          <p className="text-[15px] leading-[1.8] text-[#7a7870] font-light max-w-sm">
-            I&apos;m currently open to frontend developer opportunities. Whether
-            it&apos;s a full-time role, freelance project, or just a conversation
-            about tech — feel free to reach out.
+          <p className="text-[16px] leading-[1.8] text-[#b0aea6] font-normal max-w-sm">
+            Open to Data Warehouse Administration Officer roles in Phnom Penh.
+            Feel free to reach out.
           </p>
 
           <div className="flex flex-col gap-3">
@@ -41,7 +40,7 @@ export default function Contact() {
               icon={<PhoneIcon />}
               label={profile.phone}
             />
-            <div className="flex items-center gap-3 font-mono text-[12px] text-[#7a7870]">
+            <div className="flex items-center gap-3 font-mono text-[13px] text-[#b0aea6]">
               <span className="w-8 h-8 border border-white/[0.07] rounded-sm flex items-center justify-center shrink-0">
                 <PinIcon />
               </span>
@@ -57,7 +56,7 @@ export default function Contact() {
                 href={s.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-mono text-[11px] tracking-widest uppercase text-[#7a7870] hover:text-[#c8a96e] transition-colors no-underline"
+                className="font-mono text-[12px] tracking-widest uppercase text-[#b0aea6] hover:text-[#c8a96e] transition-colors no-underline"
               >
                 {s.label} ↗
               </a>
@@ -99,7 +98,7 @@ function ContactRow({
   return (
     <a
       href={href}
-      className="flex items-center gap-3 font-mono text-[12px] text-[#7a7870] hover:text-[#c8a96e] transition-colors no-underline group"
+      className="flex items-center gap-3 font-mono text-[13px] text-[#b0aea6] hover:text-[#c8a96e] transition-colors no-underline group"
     >
       <span className="w-8 h-8 border border-white/[0.07] rounded-sm flex items-center justify-center shrink-0 group-hover:border-[#c8a96e]/40 group-hover:bg-[#c8a96e]/[0.06] transition-all duration-200">
         {icon}

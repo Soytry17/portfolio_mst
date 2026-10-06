@@ -30,18 +30,31 @@ export default function Experience() {
                 <h3 className="font-serif text-[20px] font-bold text-[#f0ede6] leading-snug">
                   {exp.title}
                 </h3>
-                <span className="font-mono text-[10px] tracking-widest uppercase text-[#c8a96e] shrink-0">
+                <span className="font-mono text-[12px] tracking-widest uppercase text-[#c8a96e] shrink-0">
                   {exp.period}
                 </span>
               </div>
 
-              <p className="font-mono text-[10px] tracking-[0.12em] uppercase text-[#7a7870] mb-3">
+              <p className="font-mono text-[12px] tracking-[0.1em] uppercase text-[#b0aea6] mb-3">
                 {exp.company}
               </p>
 
-              <p className="text-[13px] leading-relaxed text-[#7a7870]/80 font-light">
-                {exp.description}
-              </p>
+              {exp.bullets.length > 0 ? (
+                <ul className="flex flex-col gap-2">
+                  {exp.bullets.map((bullet) => (
+                    <li key={bullet} className="flex items-start gap-2.5">
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#c8a96e] mt-[8px] shrink-0" />
+                      <span className="text-[15px] leading-[1.7] text-[#b0aea6] font-normal">
+                        {bullet}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              ) : (
+                <p className="text-[15px] leading-[1.7] text-[#b0aea6] font-normal">
+                  {exp.description}
+                </p>
+              )}
             </div>
           </div>
         ))}
